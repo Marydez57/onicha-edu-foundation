@@ -1,0 +1,19 @@
+[
+    {
+        "id": 1,
+        "title": "Event 1",
+        "date": "2023-05-01",
+        "organizer": "Organizer 1",
+        "image": "event1.jpg",
+        "description": "This is the description for event 1."
+
+    },
+    {
+        "id": 2,
+        "title": "Event 2",
+        "date": "2023-06-01",
+        "organizer": "Organizer 2",
+        "image": "event2.jpg",
+        "description": "This is the description for event 2."  
+    }
+]
