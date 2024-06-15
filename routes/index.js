@@ -1,7 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
 import * as dotenv from "dotenv";
-import { getAllUpcomingEvents } from "./events.js";
+import { getAllUpcomingEvents, getUpcomingEventById } from "./events.js";
 dotenv.config();
 const app = express();
 const port = process.env.PORT;
@@ -33,6 +33,23 @@ app.get("/upcoming-events", async (req, res) => {
     });
   }
 });
+
+app.get('/upcoming-events/:id', async(req, res) => {
+  try {
+    const id = parseInt(req.params.id)
+  const event = getUpcomingEventById(id)
+  
+    res.status(200).json(event);
+  
+  } catch (error) {
+    console.error(error);
+    res.status(500).json(
+      error.message,
+    )
+  }
+  
+
+})
 
 app.listen(port, () => {
   console.log(`App listening on port ${port}`);
